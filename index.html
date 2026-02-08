@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>איקס אדלר</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__header">
+        <div class="logo">✖︎◯</div>
+        <div>
+          <h1>איקס אדלר</h1>
+          <p class="subtitle">משחק איקס־עיגול צבעוני ושמח</p>
+        </div>
+      </header>
+
+      <section id="login" class="panel">
+        <h2>בחירת שם משתמש</h2>
+        <form id="loginForm" class="form">
+          <label for="username">שם משתמש</label>
+          <input id="username" type="text" placeholder="לדוגמה: אדלר" required maxlength="20" />
+          <button type="submit" class="btn primary">כניסה ללובי</button>
+        </form>
+      </section>
+
+      <section id="lobby" class="panel hidden">
+        <div class="panel__header">
+          <h2>לובי</h2>
+          <div class="user-pill" id="userPill"></div>
+        </div>
+
+        <div class="lobby-actions">
+          <button id="createRoom" class="btn primary">פתיחת חדר חדש</button>
+          <button id="refreshRooms" class="btn ghost">רענון</button>
+        </div>
+
+        <div class="rooms">
+          <h3>חדרים פתוחים</h3>
+          <div id="roomsList" class="rooms__list"></div>
+        </div>
+      </section>
+
+      <section id="room" class="panel hidden">
+        <div class="panel__header">
+          <h2 id="roomTitle">חדר</h2>
+          <div class="room-meta">
+            <span id="roomStatus" class="badge"></span>
+            <button id="leaveRoom" class="btn ghost">יציאה ללובי</button>
+          </div>
+        </div>
+
+        <div class="players" id="players"></div>
+
+        <div class="game">
+          <div id="turnInfo" class="turn-info"></div>
+          <div id="board" class="board"></div>
+          <div id="gameResult" class="game-result"></div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <span>נבנה באהבה • איקס אדלר</span>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
